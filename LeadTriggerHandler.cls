@@ -32,7 +32,7 @@ public class LeadTriggerHandler {
     }
 
     private static void beforeUpdate(List<Lead> newRecords, Map<Id, Lead> oldRecordsMap) {
-        // Lógica para before update
+        // Lógica para before updatee
     }
 
     private static void afterUpdate(List<Lead> newRecords, Map<Id, Lead> oldRecordsMap) {
