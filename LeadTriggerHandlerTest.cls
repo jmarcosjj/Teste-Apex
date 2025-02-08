@@ -3,7 +3,7 @@ public class LeadTriggerHandlerTest {
     
     @isTest
     static void testAfterInsert() {
-        // Criação de um Lead de testee
+        // Criação de um Lead de teste
         Lead testLead = new Lead(
             FirstName = 'João',
             LastName = 'Silva',
