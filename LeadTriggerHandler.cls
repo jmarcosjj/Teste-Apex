@@ -36,7 +36,7 @@ public class LeadTriggerHandler {
     }
 
     private static void afterUpdate(List<Lead> newRecords, Map<Id, Lead> oldRecordsMap) {
-        // Lógica para after update
+        // Lógica para after updatee
     }
 
     // Adicionando o método createTasksForLeads
