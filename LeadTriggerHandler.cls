@@ -43,19 +43,19 @@ public class LeadTriggerHandler {
     public static void createTasksForLeads(List<Lead> newLeads) {
         List<Task> tasks = new List<Task>();
 
-        for (Lead l : newLeads) {
+        for (Lead lead : newLeads) {
             // Verifica se já existe uma tarefa pendente para este Lead
-            List<Task> existingTasks = [SELECT Id FROM Task WHERE WhoId = :l.Id AND Status != 'Completed'];
+            List<Task> existingTasks = [SELECT Id FROM Task WHERE WhoId = :lead.Id AND Status != 'Completed'];
 
             if (existingTasks.isEmpty()) {
                 Task newTask = new Task(
-                    Subject = 'O novo lead ' + l.FirstName +' '+ l.LastName + ' foi criado no sistema',
+                    Subject = 'O novo lead ' + lead.FirstName +' '+ lead.LastName + ' foi criado no sistema',
                     Description = 'Verifique as informações fornecidas:\n' +
-                                 '• Nome do Lead: ' + l.FirstName +' '+ l.LastName + '\n' +
-                                 '• Email: ' + (l.Email != null ? l.Email : 'Não informado') + '\n' +
-                                 '• Telefone: ' + (l.Phone != null ? l.Phone : 'Não informado') + '',
-                    OwnerId = l.OwnerId,
-                    WhoId = l.Id,
+                                 '• Nome do Lead: ' + lead.FirstName +' '+ lead.LastName + '\n' +
+                                 '• Email: ' + (lead.Email != null ? lead.Email : 'Não informado') + '\n' +
+                                 '• Telefone: ' + (lead.Phone != null ? lead.Phone : 'Não informado') + '',
+                    OwnerId = lead.OwnerId,
+                    WhoId = lead.Id,
                     ActivityDate = Date.today().addDays(2),
                     Status = 'Not Started',
                     Priority = 'Normal'
