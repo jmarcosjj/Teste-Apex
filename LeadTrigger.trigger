@@ -5,6 +5,7 @@ trigger LeadTrigger on Lead (before insert, after insert, before update, after u
         Trigger.isBefore,
         Trigger.isAfter,
         Trigger.operationType
-        //aaa
+        //teste
+        //teste
     );
 }
